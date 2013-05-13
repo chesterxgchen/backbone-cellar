@@ -1,3 +1,21 @@
+Backbone.View.prototype.close = function () {
+    console.log('Closing view ' + this);
+    if (this.beforeClose) {
+        this.beforeClose();
+    }
+    this.remove();
+    this.unbind();
+};
+
+Backbone.View.prototype.dustTemplate = function(name, data) {
+            var result;
+            dust.render(name, data, function(err, res) {
+               result = res;
+            });
+            return result;
+};
+
+
 var AppRouter = Backbone.Router.extend({
 
     routes: {

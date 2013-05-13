@@ -13,8 +13,6 @@ import scala.Predef._
  */
 class WineDAO {
 
-  import com.tingatech.web.example.Wine
-
   def getConnection: Connection = {
     val url ="jdbc:mysql://localhost"
     Class.forName("com.mysql.jdbc.Driver").newInstance()

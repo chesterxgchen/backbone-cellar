@@ -47,7 +47,7 @@ window.Wine = Backbone.Model.extend({
         region: "California",
         year: "",
         description: "",
-        picture: null
+        picture: "pics/generic.jpg"
     }
 });
 
