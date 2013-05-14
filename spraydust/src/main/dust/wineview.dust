@@ -2,7 +2,6 @@
 
     <form class="form-horizontal span12">
 
-
         <fieldset>
 
             <legend>Wine Details</legend>
@@ -82,7 +81,7 @@
 
                 <div class="span3">
                     <div class="well">
-                        <p><img id="picture" width="180" src="'pics/{picture}'"/></p>
+                        <p><img id="picture" width="180" src="pics/{picture}"/></p>
 
                         <p>To change the picture, drag a new picture from your file system onto the box above.</p>
                     </div>
