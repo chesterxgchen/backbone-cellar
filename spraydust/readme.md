@@ -124,6 +124,21 @@ is really easy, here is the change for "winewiew" template
 </code></pre>
 
 
+Since we pre-compiled the dust templates into java scripts and directly included compiled java scripts into the index.html, 
+there is no need to dynamically load the templates as the original code did. 
+
+There is no need for dynamic on-damand dust compilation either. 
+
+In the Main.js, the startup code simply becomes
+
+
+app = new AppRouter();
+Backbone.history.start();
+
+
+
+
+
 ## API layer:
 (to be completed)
 
