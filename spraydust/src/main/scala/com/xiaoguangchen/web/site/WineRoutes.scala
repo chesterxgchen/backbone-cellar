@@ -16,25 +16,48 @@ import com.xiaoguangchen.web.model.{WineResources, Wine}
 trait WineRoutes  extends HttpService  {
   this: WineFormats with CommonTrait =>
 
+
+
   //CORS support
   def fromObjectCross(origin: String) = respondWithHeader(RawHeader("Access-Control-Allow-Origin", origin))
 
   def wineRoute =  {
     logRequestResponse(showErrorResponses _) {
       fromObjectCross("*") {
-        put  {
-          pathPrefix("api/wines" / IntNumber) { id: Int =>
-            respondWithMediaType(`application/json`) {
-              entity(as[Wine])  { wine: Wine =>
-                complete {
-                  WineResources.update(wine)
+        (get & encodeResponse(Gzip)) {
+          getFromResourceDirectory("web") ~
+            path("") {
+              redirect("index.html")
+            } ~
+            path("api"/"wines") {
+              respondWithMediaType(`application/json`) {
+                complete(WineResources.findAll)
+              }
+            } ~
+            pathPrefix("api"/"wines"/"search" / Rest) {  rest:String =>
+              respondWithMediaType(`application/json`) {
+                complete(WineResources.findByName(stripTailingSlash(rest)))
+              }
+            } ~
+            pathPrefix("api"/"wines" / IntNumber) { id: Int =>
+              respondWithMediaType(`application/json`) {
+                complete(WineResources.findById(id))
+              }
+            }
+        }~
+          put  {
+            pathPrefix("api"/"wines" / IntNumber) { id: Int =>
+              respondWithMediaType(`application/json`) {
+                entity(as[Wine])  { wine: Wine =>
+                  complete {
+                    WineResources.update(wine)
+                  }
                 }
               }
             }
-          }
-        } ~
+          } ~
           post  {
-            path("api/wines") {
+            path("api"/"wines") {
               respondWithMediaType(`application/json`) {
                 entity(as[Wine])  { wine: Wine =>
                   complete {
@@ -45,28 +68,10 @@ trait WineRoutes  extends HttpService  {
             }
           } ~
           delete  {
-            pathPrefix("api/wines" / IntNumber) { id: Int =>
+            pathPrefix("api"/"wines" / IntNumber) { id: Int =>
             //complete ( WineResources.remove(id) )
               ctx =>  WineResources.remove(id)
             }
-          } ~
-          (get & encodeResponse(Gzip)) {
-            getFromResourceDirectory("web") ~
-              path("api/wines") {
-                respondWithMediaType(`application/json`) {
-                  complete(WineResources.findAll)
-                }
-              } ~
-              pathPrefix("api/wines"/"search" / Rest) {  rest:String =>
-                respondWithMediaType(`application/json`) {
-                  complete(WineResources.findByName(stripTailingSlash(rest)))
-                }
-              } ~
-              pathPrefix("api/wines" / IntNumber) { id: Int =>
-                respondWithMediaType(`application/json`) {
-                  complete(WineResources.findById(id))
-                }
-              }
           }
       }
     }

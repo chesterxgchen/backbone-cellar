@@ -51,6 +51,7 @@ var AppRouter = Backbone.Router.extend({
 	addWine: function() {
         var wine = new Wine();
         $('#content').html(new WineView({model: wine}).el);
+        //app.navigate("wines/add", true);
         this.headerView.selectMenuItem('add-menu');
 	},
 
@@ -64,7 +65,6 @@ var AppRouter = Backbone.Router.extend({
 
 });
 
-utils.loadTemplate(['HeaderView', 'WineView', 'WineListItemView', 'AboutView'], function() {
-    app = new AppRouter();
-    Backbone.history.start();
-});
+
+app = new AppRouter();
+Backbone.history.start();

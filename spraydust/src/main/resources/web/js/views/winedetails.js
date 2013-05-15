@@ -6,7 +6,7 @@ window.WineView = Backbone.View.extend({
 
     render: function () {
        // $(this.el).html(this.template(this.model.toJSON()));
-        $(this.el).html(this.dustTemplate("header"));
+        $(this.el).html(this.dustTemplate("wineview",this.model.toJSON() ));
         return this;
     },
 
@@ -66,7 +66,7 @@ window.WineView = Backbone.View.extend({
                 utils.showAlert('Success!', 'Wine saved successfully', 'alert-success');
             },
             error: function () {
-                utils.showAlert('Error', 'An error occurred while trying to delete this item', 'alert-error');
+                utils.showAlert('Error', 'An error occurred while trying to save this item', 'alert-error');
             }
         });
     },

@@ -45,9 +45,9 @@ window.Wine = Backbone.Model.extend({
         grapes: "",
         country: "USA",
         region: "California",
-        year: "",
+        year: "2012",
         description: "",
-        picture: "pics/generic.jpg"
+        picture: "generic.jpg"
     }
 });
 

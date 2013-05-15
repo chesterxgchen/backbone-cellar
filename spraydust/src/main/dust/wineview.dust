@@ -58,13 +58,14 @@
                         <label for="year" class="control-label">Year:</label>
 
                         <div class="controls">
-                            <select class="span1" id="year" name="year" value="{year}">
-                                 <option {@eq key=value value=2012}  selected="true"{/eq} >2012</option>
-                                 <option {@eq key=value value=2011}  selected="true"{/eq} >2011</option>
-                                 <option {@eq key=value value=2010}  selected="true"{/eq} >2010</option>
-                                 <option {@eq key=value value=2009}  selected="true"{/eq} >2009</option>
-                                 <option {@eq key=value value=2008}  selected="true"{/eq} >2008</option>
-                                 <option {@eq key=value value=2007}  selected="true"{/eq} >2007</option>
+                            <select class="span2" id="year" name="year" value="{year}">
+                            <!-- this somehow does not work -->
+                              <option value="2012"{@eq key=year value="2012"}  selected="true"{/eq} >2012</option>
+                              <option value="2011"{@eq key=year value="2011"}  selected="true"{/eq} >2011</option>
+                              <option value="2010"{@eq key=year value="2010"}  selected="true"{/eq} >2010</option>
+                              <option value="2009"{@eq key=year value="2009"}  selected="true"{/eq} >2009</option>
+                              <option value="2008"{@eq key=year value="2008"}  selected="true"{/eq} >2008</option>
+                              <option value="2007"{@eq key=year value="2007"}  selected="true"{/eq} >2007</option>
                             </select>
                         </div>
                     </div>

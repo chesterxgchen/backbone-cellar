@@ -11,14 +11,13 @@ import com.xiaoguangchen.spa.annotation.Column
  * 5/8/13
  */
 
-case class Wine(@Column("id") id: Int,
-                @Column("name") name:String,
-                @Column("grapes") grapes:String,
-                @Column("country") country:String,
-                @Column("region") region:String,
-                @Column("year") year:String,
-                @Column("picture") picture:String,
-                @Column("description") description:String
+case class Wine(id: Option[Int],
+                name:String,
+                grapes:String,
+                country:String,
+                region:String,
+                year:String,
+                picture:String,
+                description:String
                 )
-
 

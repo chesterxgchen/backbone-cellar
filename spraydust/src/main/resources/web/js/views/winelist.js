@@ -34,7 +34,8 @@ window.WineListItemView = Backbone.View.extend({
     },
 
     render: function () {
-        $(this.el).html(this.template(this.model.toJSON()));
+       // $(this.el).html(this.template(this.model.toJSON()));
+        $(this.el).html(this.dustTemplate("winelistitemview",this.model.toJSON() ));
         return this;
     }
 
