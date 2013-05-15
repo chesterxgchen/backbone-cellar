@@ -131,9 +131,10 @@ There is no need for dynamic on-damand dust compilation either.
 
 In the Main.js, the startup code simply becomes
 
-
+<pre><code>
 app = new AppRouter();
 Backbone.history.start();
+</code></pre>
 
 
 
