@@ -44,5 +44,5 @@ libraryDependencies ++= Seq(
 
 //don't do this, this will cause all src code being deleted with sbt clean
 //(resourceManaged in (Compile, JsKeys.js)) <<= (sourceDirectory in Compile)( _ /"." )
+//(resourceGenerators in Compile) <+= (JsKeys.js in Compile)
 
-(resourceGenerators in Compile) <+= (JsKeys.js in Compile)
