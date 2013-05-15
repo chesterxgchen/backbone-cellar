@@ -29,7 +29,7 @@ CREATE TABLE `wine` (
   `grapes` varchar(45) DEFAULT NULL,
   `country` varchar(45) DEFAULT NULL,
   `region` varchar(45) DEFAULT NULL,
-  `description` blob,
+  `description` varchar(4000),
   `picture` varchar(256) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=latin1;
