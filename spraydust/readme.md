@@ -1,4 +1,4 @@
-## updated Readme.md: spraydust
+# updated Readme.md: spraydust
 
 In this forked project, we added the followings:
 
@@ -7,7 +7,7 @@ In this forked project, we added the followings:
 
 The sub-project is loaded the "spraydust" directory
 
-#Build
+##Build
 
 I am using sbt to build, sbt can be found at http://www.scala-sbt.org/release/docs/Getting-Started/Setup.html
 
@@ -37,13 +37,13 @@ cd sbt-dustjs
 sbt publish-local
 </code></pre>
 
-# Database access layer.
+## Database access layer.
 
 I use spa for the mysql database operations. To make things easier, I changed the
 description column from blob to VARCHAR (4000). The database persistence codes are in WineDAO
 
 
-# Dust template
+## Dust template
 
 I use sbt-dustjs plugin to compile the dust template into javascripts and use sbt-js to concatenate several java script files into one fine,
 which is included in the index.html. Even though the dust can be compiled via node.js (such as linkedIn dustc and duster.js),
@@ -65,7 +65,7 @@ cp target/scala-2.10/resource_managed/main/resources/web/js/dust/spraydust.js sr
 
 There are some issue at the moment to configure sbt-js to out to the  src/main/resources/web/js/dust/spraydust.js directly.
 
-# Other changes
+## Other changes
 
 In index.html we need to add
 
@@ -124,5 +124,6 @@ is really easy, here is the change for "winewiew" template
 </code></pre>
 
 
-API layer:
+## API layer:
+(to be completed)
 
