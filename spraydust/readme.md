@@ -70,16 +70,15 @@ description column from blob to VARCHAR (4000). The database persistence codes a
 
 Dust template
 
-We use sbt-dustjs plugin to compile the dust template into javascripts and use sbt-js to minify
-concatenate several template java script files into one fine, which is included in the index.html
+I use sbt-dustjs plugin to compile the dust template into javascripts and use sbt-js to concatenate several java script files into one fine, which is included in the index.html
 
-sbt-dustjs expecting the dust template located at src/main/dust directory.
+sbt-dustjs expects the dust template located at src/main/dust directory.
 
 I have configure the compiled js dust templates into src/main/resources/web/js/dust
 
-each templates use the file base name (filename without extension) as the registered name, which be used for rendering
+each template uses the file base name (filename without extension) as the registered name, which be used for rendering
 
-to concatenate the dust templates into one single template, I have used sbt-js and use spraydust.jsm manifest file.
+to concatenate the dust templates into one single template, I have used spraydust.jsm manifest file.
 
 to generate the js files:
 
@@ -90,6 +89,7 @@ sbt dust js
 </code></pre>
 
 then you need to manually cp the spraydust.js
+
 target/scala-2.10/resource_managed/main/resources/web/js/dust/spraydust.js
 to
 src/main/resources/web/js/dust/spraydust.js
