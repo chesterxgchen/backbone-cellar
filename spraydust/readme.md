@@ -40,7 +40,7 @@ Build
 
  http://www.scala-sbt.org/release/docs/Getting-Started/Setup.html
 
-I have to use several snapshot build for this project:
+I have to use several snapshot builds for this project:
 
 spray -- spray-1.1-M8-shapshot nightly build. to build spray
 
@@ -53,8 +53,7 @@ sbt publish-local
 spa  -- https://github.com/chesterxgchen/spa (included in the project lib directory)
 
 
-sbt-dustjs plugin -- to use sbt 0,12, you need to match version of sbt-dustjs plugin
-                     the original sbt-dustjs plugin (https://github.com/timperrett/sbt-dustjs) only works for sbt 0.11 (scala 2.9.1)
+sbt-dustjs plugin -- the original sbt-dustjs plugin (https://github.com/timperrett/sbt-dustjs) only works for sbt 0.11 (scala 2.9.1),
                      to use the sbt 0.12 you need to use the forked version at https://github.com/chesterxgchen/sbt-dustjs
 
 <pre><code>
