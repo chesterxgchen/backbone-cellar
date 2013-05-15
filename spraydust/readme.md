@@ -98,11 +98,10 @@ Even I can configure sbt-js to out to the  src/main/resources/web/js/dust/sprayd
 
 this is how would I do this, but if you type sbt clean, all src code will be deleted.that's why I am manually do this.
 
-<pre><code>
-
 //don't do this, this will cause all src code being deleted with sbt clean
-//(resourceManaged in (Compile, JsKeys.js)) <<= (sourceDirectory in Compile)( _ /"." )
 
+<pre><code>
+(resourceManaged in (Compile, JsKeys.js)) <<= (sourceDirectory in Compile)( _ /"." )
 </code></pre>
 
 
